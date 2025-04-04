@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Movies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Data App</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/scraped">Scraped Movies</a>
+            <a href="/api">API Movies</a>
+        </nav>
+    </header>
+    <main>
+        <h2>🔍 API Movies</h2>
+        <ul>
+            {% for movie in api_movies %}
+                <li>
+                    <img src="{{ movie[3] }}" alt="Poster">
+                    <div>
+                        <strong>{{ movie[0] }}</strong> — Genre: {{ movie[1] }}<br>
+                        {{ movie[2] }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
